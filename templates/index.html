@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        AI WhatsApp Message Improver
+    </title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         BACKGROUND
+    ========================================= -->
+
+    <div class="background-circle circle-one"></div>
+
+    <div class="background-circle circle-two"></div>
+
+    <div class="background-circle circle-three"></div>
+
+
+
+    <!-- ========================================
+         MAIN CONTAINER
+    ========================================= -->
+
+    <main class="container">
+
+
+        <!-- ====================================
+             HEADER
+        ===================================== -->
+
+        <header class="header">
+
+
+            <div class="logo">
+
+
+                <div class="logo-icon">
+                    💬
+                </div>
+
+
+                <div>
+
+                    <h1>
+                        AI WhatsApp
+                    </h1>
+
+                    <p>
+                        Message Improver
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <p class="header-description">
+
+                Turn simple messages into
+                clear, polished WhatsApp messages
+                with AI.
+
+            </p>
+
+
+        </header>
+
+
+
+        <!-- ====================================
+             MAIN CARD
+        ===================================== -->
+
+        <section class="main-card">
+
+
+            <!-- ==================================
+                 QUICK TEMPLATES
+            =================================== -->
+
+            <div class="section-heading">
+
+
+                <div class="section-title">
+
+                    <span>
+                        ⚡
+                    </span>
+
+                    Quick Templates
+
+                </div>
+
+
+                <span class="required">
+                    Optional
+                </span>
+
+
+            </div>
+
+
+
+            <div class="template-grid">
+
+
+                <!-- CLASS -->
+
+                <button
+                    type="button"
+                    class="template-card"
+                    onclick="useTemplate('class')"
+                >
+
+                    <span class="template-icon">
+                        🎓
+                    </span>
+
+                    <span class="template-name">
+                        Class
+                    </span>
+
+                </button>
+
+
+
+                <!-- WORK -->
+
+                <button
+                    type="button"
+                    class="template-card"
+                    onclick="useTemplate('work')"
+                >
+
+                    <span class="template-icon">
+                        💼
+                    </span>
+
+                    <span class="template-name">
+                        Work
+                    </span>
+
+                </button>
+
+
+
+                <!-- MEETING -->
+
+                <button
+                    type="button"
+                    class="template-card"
+                    onclick="useTemplate('meeting')"
+                >
+
+                    <span class="template-icon">
+                        📅
+                    </span>
+
+                    <span class="template-name">
+                        Meeting
+                    </span>
+
+                </button>
+
+
+
+                <!-- REQUEST -->
+
+                <button
+                    type="button"
+                    class="template-card"
+                    onclick="useTemplate('request')"
+                >
+
+                    <span class="template-icon">
+                        🙏
+                    </span>
+
+                    <span class="template-name">
+                        Request
+                    </span>
+
+                </button>
+
+
+
+                <!-- INVITATION -->
+
+                <button
+                    type="button"
+                    class="template-card"
+                    onclick="useTemplate('invitation')"
+                >
+
+                    <span class="template-icon">
+                        🎉
+                    </span>
+
+                    <span class="template-name">
+                        Invitation
+                    </span>
+
+                </button>
+
+
+
+                <!-- LEAVE -->
+
+                <button
+                    type="button"
+                    class="template-card"
+                    onclick="useTemplate('leave')"
+                >
+
+                    <span class="template-icon">
+                        🏖️
+                    </span>
+
+                    <span class="template-name">
+                        Leave
+                    </span>
+
+                </button>
+
+
+
+                <!-- PAYMENT -->
+
+                <button
+                    type="button"
+                    class="template-card"
+                    onclick="useTemplate('payment')"
+                >
+
+                    <span class="template-icon">
+                        💰
+                    </span>
+
+                    <span class="template-name">
+                        Payment
+                    </span>
+
+                </button>
+
+
+
+                <!-- ANNOUNCEMENT -->
+
+                <button
+                    type="button"
+                    class="template-card"
+                    onclick="useTemplate('announcement')"
+                >
+
+                    <span class="template-icon">
+                        📢
+                    </span>
+
+                    <span class="template-name">
+                        Announcement
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 MESSAGE INPUT
+            =================================== -->
+
+            <div class="section-heading">
+
+
+                <div class="section-title">
+
+                    <span>
+                        ✍️
+                    </span>
+
+                    Write your message
+
+                </div>
+
+
+                <span class="required">
+                    Required
+                </span>
+
+
+            </div>
+
+
+
+            <div class="textarea-wrapper">
+
+
+                <textarea
+                    id="messageInput"
+                    maxlength="500"
+                    placeholder="Example: tomorrow class 10 am all students come compulsory"
+                ></textarea>
+
+
+                <div class="textarea-footer">
+
+
+                    <span id="charCount">
+
+                        0 / 500 characters
+
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="clear-button"
+                        onclick="clearMessage()"
+                    >
+
+                        🗑️ Clear
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 MESSAGE STYLE
+            =================================== -->
+
+            <div class="section-heading style-heading">
+
+
+                <div class="section-title">
+
+                    <span>
+                        🎨
+                    </span>
+
+                    Choose message style
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="style-grid">
+
+
+                <!-- PROFESSIONAL -->
+
+                <button
+                    type="button"
+                    class="style-card active"
+                    data-style="Professional"
+                    onclick="selectStyle(this)"
+                >
+
+                    <div class="style-icon">
+                        💼
+                    </div>
+
+
+                    <div class="style-content">
+
+                        <h3>
+                            Professional
+                        </h3>
+
+                        <p>
+                            Clear and polished
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+
+                <!-- FRIENDLY -->
+
+                <button
+                    type="button"
+                    class="style-card"
+                    data-style="Friendly"
+                    onclick="selectStyle(this)"
+                >
+
+                    <div class="style-icon">
+                        😊
+                    </div>
+
+
+                    <div class="style-content">
+
+                        <h3>
+                            Friendly
+                        </h3>
+
+                        <p>
+                            Warm and natural
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+
+                <!-- FORMAL -->
+
+                <button
+                    type="button"
+                    class="style-card"
+                    data-style="Formal"
+                    onclick="selectStyle(this)"
+                >
+
+                    <div class="style-icon">
+                        📝
+                    </div>
+
+
+                    <div class="style-content">
+
+                        <h3>
+                            Formal
+                        </h3>
+
+                        <p>
+                            Respectful and official
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+
+                <!-- SHORT -->
+
+                <button
+                    type="button"
+                    class="style-card"
+                    data-style="Short and Simple"
+                    onclick="selectStyle(this)"
+                >
+
+                    <div class="style-icon">
+                        ⚡
+                    </div>
+
+
+                    <div class="style-content">
+
+                        <h3>
+                            Short &amp; Simple
+                        </h3>
+
+                        <p>
+                            Short and easy to understand
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 IMPROVE BUTTON
+            =================================== -->
+
+            <button
+                type="button"
+                class="improve-button"
+                onclick="improveMessage()"
+            >
+
+                <span id="buttonIcon">
+                    ✨
+                </span>
+
+
+                <span id="buttonText">
+                    Improve Message
+                </span>
+
+            </button>
+
+
+
+            <!-- ==================================
+                 RESULT
+            =================================== -->
+
+            <section
+                class="result-section"
+                id="resultSection"
+                style="display: none;"
+            >
+
+
+                <div class="result-header">
+
+
+                    <div class="section-title">
+
+                        <span>
+                            ✨
+                        </span>
+
+                        Improved Message
+
+                    </div>
+
+
+                    <span class="ai-badge">
+                        AI Generated
+                    </span>
+
+
+                </div>
+
+
+
+                <div
+                    class="result-box"
+                    id="resultBox"
+                    contenteditable="true"
+                >
+
+                    Your improved message will appear here.
+
+                </div>
+
+
+
+                <div class="edit-hint">
+
+                    ✏️ You can edit the message
+                    before copying or sharing.
+
+                </div>
+
+
+
+                <!-- MESSAGE STATISTICS -->
+
+                <div class="message-stats">
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-icon">
+                            🔤
+                        </span>
+
+                        <div>
+
+                            <span class="stat-label">
+                                Words
+                            </span>
+
+                            <strong id="wordCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-icon">
+                            🔢
+                        </span>
+
+                        <div>
+
+                            <span class="stat-label">
+                                Characters
+                            </span>
+
+                            <strong id="resultCharCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-icon">
+                            ⏱️
+                        </span>
+
+                        <div>
+
+                            <span class="stat-label">
+                                Reading Time
+                            </span>
+
+                            <strong id="readingTime">
+                                0 sec
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-icon">
+                            🎨
+                        </span>
+
+                        <div>
+
+                            <span class="stat-label">
+                                Style
+                            </span>
+
+                            <strong id="resultStyle">
+                                Professional
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- RESULT ACTIONS -->
+
+                <div class="result-actions">
+
+
+                    <button
+                        type="button"
+                        class="regenerate-button"
+                        onclick="improveMessage()"
+                    >
+
+                        🔄 Regenerate
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="copy-button"
+                        onclick="copyMessage()"
+                    >
+
+                        📋 Copy
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="download-button"
+                        onclick="downloadMessage()"
+                    >
+
+                        ⬇️ Download
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="share-button"
+                        onclick="shareMessage()"
+                    >
+
+                        📤 Share
+
+                    </button>
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+
+        <!-- ====================================
+             HISTORY
+        ===================================== -->
+
+        <section
+            class="history-section"
+            id="historySection"
+        >
+
+
+            <div class="history-header">
+
+
+                <div class="section-title">
+
+                    <span>
+                        🕘
+                    </span>
+
+                    Message History
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="clear-history-button"
+                    onclick="clearHistory()"
+                >
+
+                    🗑️ Clear History
+
+                </button>
+
+
+            </div>
+
+
+
+            <div
+                class="history-list"
+                id="historyList"
+            >
+
+                <p class="empty-history">
+
+                    Your improved messages
+                    will appear here.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ====================================
+             FOOTER
+        ===================================== -->
+
+        <footer class="footer">
+
+
+            <p>
+
+                ✨ Powered by
+                <strong>
+                    Gemini AI
+                </strong>
+
+            </p>
+
+
+            <p class="footer-small">
+
+                Improve your words.
+                Keep your meaning.
+
+            </p>
+
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>
