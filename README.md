@@ -2,6 +2,14 @@
 
 An AI-powered web application that helps users rewrite WhatsApp messages to make them clearer, more natural, grammatically correct, and appropriate for different communication styles.
 
+## 📸 Application Screenshots
+
+### Home Page
+![AI WhatsApp Message Improver Home Page](screenshots/whatsapp-home.png)
+
+### Improved Message Result
+![AI WhatsApp Message Improver Result](screenshots/whatsapp-result.png)
+
 ## ✨ Features
 
 - Improve WhatsApp messages using Google Gemini AI.
@@ -33,6 +41,9 @@ ai_whatsapp_improver/
 ├── .env.example
 ├── .gitignore
 ├── requirements.txt
+├── screenshots/
+│   ├── whatsapp-home.png
+│   └── whatsapp-result.png
 ├── templates/
 │   └── index.html
 ├── static/
@@ -41,17 +52,13 @@ ai_whatsapp_improver/
 └── README.md
 ```
 
-The structure above shows the intended project files. Create `.env.example` and `requirements.txt` if they do not already exist.
-
 ## ⚙️ Installation and Setup
 
 ### 1. Clone the repository
 
-Replace the repository URL below with your actual GitHub repository URL after creating the repository.
-
 ```powershell
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd ai_whatsapp_improver
+git clone https://github.com/chethansree77/ai-whatsapp-message-improver.git
+cd ai-whatsapp-message-improver
 ```
 
 ### 2. Create and activate a virtual environment
@@ -64,12 +71,12 @@ python -m venv venv
 ### 3. Install dependencies
 
 ```powershell
-pip install flask google-genai python-dotenv
+pip install -r requirements.txt
 ```
 
 ### 4. Configure your Gemini API key
 
-Create a `.env` file in the project root:
+Create a `.env` file in the project root, using `.env.example` as a guide:
 
 ```text
 GEMINI_API_KEY=your_gemini_api_key_here
@@ -83,7 +90,7 @@ Replace the placeholder with your own Gemini API key. Never upload your real `.e
 python app.py
 ```
 
-Open `http://127.0.0.1:5000` in your browser.
+Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 ## 🔐 Security
 
